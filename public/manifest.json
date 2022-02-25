@@ -1,0 +1,21 @@
+{
+    "name": "sample extension",
+    "manifest_version": 2,
+    "version": "1.0",
+    "browser_action": {
+    },
+    "background": {
+        "persistent": false,
+        "scripts": ["background.js"]
+    },
+    "permissions": [
+        "activeTab",
+        "tabs"
+    ],
+    "commands": {
+        "hello": {
+            "suggested_key": "Ctrl+Shift+P",
+            "description": "Say Hello"
+         }
+    }
+}
