@@ -1,4 +1,3 @@
-
 import * as path from "path";
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 
