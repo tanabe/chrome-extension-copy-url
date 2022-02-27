@@ -14,7 +14,7 @@
     ],
     "commands": {
         "hello": {
-            "suggested_key": "Ctrl+Shift+P",
+            "suggested_key": "Ctrl+Shift+0",
             "description": "Say Hello"
          }
     }
