@@ -5,7 +5,7 @@ const execute = async () => {
     let url = tabs[0].url;
     if (url != null) {
       copyToClipboard(url);
-      alert("hello world");
+      alert("copied!");
     } else {
       alert(url);
     }
