@@ -1,7 +1,7 @@
 {
-    "name": "sample extension",
+    "name": "copy partial url",
     "manifest_version": 2,
-    "version": "1.0",
+    "version": "0.1.0",
     "browser_action": {
     },
     "background": {
