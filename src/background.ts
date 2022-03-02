@@ -6,7 +6,7 @@ interface UrlItem {
 }
 
 interface Preference {
-  items: [UrlItem],
+  items: UrlItem[],
   version: string
 }
 
@@ -14,6 +14,7 @@ interface Preference {
 const savePreferences = async () => {
   let preference: Preference = {
     items: [
+      {url: "https://github.com", matcher: "https://github.com/([^/]+/[^/]+)"},
       {url: "https://github.com", matcher: "https://github.com/([^/]+/[^/]+)"}
     ],
     version: '0.1.0'
@@ -38,21 +39,25 @@ const execute = async () => {
 
   browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
     let url = tabs[0].url;
-    if (url != null) {
-      preference.items.forEach((item) => {
-        if (url!.indexOf(item.url) > -1) {
-          let regexp = new RegExp(item.matcher);
-          let matches = url?.match(regexp);
-          console.log(item.matcher);
-          if (matches) {
-            let parialUrl = matches[1];
-            alert(`copied ${parialUrl}`);
-            copyToClipboard(parialUrl);
-          }
-        }
-      });
-    } else {
-      alert('failed');
+    if (url == null) {
+      return;
+    }
+
+    let item = preference.items.find((urlItem) => {
+      return url!.indexOf(urlItem.url) > -1;
+    });
+
+    if (item == null) {
+      return;
+    }
+
+    let regexp = new RegExp(item.matcher);
+    let matches = url?.match(regexp);
+
+    if (matches) {
+      let parialUrl = matches[1];
+      alert(`copied ${parialUrl}`);
+      copyToClipboard(parialUrl);
     }
   });
 }
