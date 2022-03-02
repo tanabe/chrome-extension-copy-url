@@ -1,19 +1,19 @@
 import { browser } from 'webextension-polyfill-ts'
 
-interface UrlItem {
+interface Entry {
   url: string,
   matcher: string
 }
 
 interface Preference {
-  items: UrlItem[],
+  entries: Entry[],
   version: string
 }
 
 // sample preferences
 const savePreferences = async () => {
   let preference: Preference = {
-    items: [
+    entries: [
       {url: "https://github.com", matcher: "https://github.com/([^/]+/[^/]+)"},
       {url: "https://github.com", matcher: "https://github.com/([^/]+/[^/]+)"}
     ],
@@ -43,8 +43,8 @@ const execute = async () => {
       return;
     }
 
-    let item = preference.items.find((urlItem) => {
-      return url!.indexOf(urlItem.url) > -1;
+    let item = preference.entries.find((entry) => {
+      return url!.indexOf(entry.url) > -1;
     });
 
     if (item == null) {

@@ -8,15 +8,16 @@
         }
         li {
             list-style-type: none;
+            margin-bottom: 5px;
         }
     </style>
 </head>
 
 <body>
     <h1>Copy Partial URL Options</h1>
-    <p><button>add</button></p>
-    <ul>
-        <li><input type="text" placeholder="url"> <input type="text" placeholder="matcher"> <button>delete</button></li>
+    <p><button id="add-button">add</button></p>
+    <ul id="entries">
     </ul>
-
+    <p><button id="save-button">save</button></p>
+    <script src="options.js"></script>
 </html>

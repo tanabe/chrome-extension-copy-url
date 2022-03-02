@@ -4,7 +4,8 @@ import CopyWebpackPlugin from 'copy-webpack-plugin'
 const config = (env: any, argv: any) => {
     return {
         entry: {
-            background: path.join(__dirname, 'src', 'background.ts')
+            background: path.join(__dirname, 'src', 'background.ts'),
+            options: path.join(__dirname, 'src', 'options.ts')
         },
         output: {
             path: path.join(__dirname, 'dist'),
