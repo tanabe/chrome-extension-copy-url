@@ -15,7 +15,7 @@ const savePreferences = async () => {
   let preference: Preference = {
     entries: [
       {url: "https://github.com", matcher: "https://github.com/([^/]+/[^/]+)"},
-      {url: "https://github.com", matcher: "https://github.com/([^/]+/[^/]+)"}
+      {url: "https://twitter.com", matcher: "https://twitter.com/([^/]+)"}
     ],
     version: '0.1.0'
   };
