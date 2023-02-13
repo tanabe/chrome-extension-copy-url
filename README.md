@@ -18,4 +18,4 @@ You will see a `dist` direcotry.
 ## Example
 
 1. Open `https://github.com/tanabe/chrome-extension-copy-url` in your Chrome.
-1. As soon as You press Ctrl + Shift + 0, Your clipboard will store `tanabe/chrome-extension-copy-url`.
+1. As soon as You press Cmd + Shift + 0, Your clipboard will store `tanabe/chrome-extension-copy-url`.
